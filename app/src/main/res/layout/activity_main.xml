@@ -1,43 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#FFCDD2">
 
-    <EditText
-        android:id="@+id/uTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:inputType="numberDecimal|numberSigned" />
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FF8A80">
 
-    <EditText
-        android:id="@+id/iTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:inputType="numberDecimal|numberSigned" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="U"
+            android:layout_weight="1"
+            android:gravity="center"/>
 
-    <EditText
-        android:id="@+id/rTextView"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="I"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:inputType="numberDecimal|numberSigned" />
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/uTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal|numberSigned"
+            android:text="0"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/iTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal|numberSigned"
+            android:text="0"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/rTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal|numberSigned"
+            android:text="0"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="calculate"
         android:text="CALCULATE"
-        android:onClick="calculate"/>
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:textSize="30sp"
+        android:background="#E53935
+"/>
 
     <TextView
         android:id="@+id/answerTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ANSWER"/>
+        android:gravity="center"
+        android:textSize="40sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leave the thing you want to calculate on 0"
+        android:textSize="20sp"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>
