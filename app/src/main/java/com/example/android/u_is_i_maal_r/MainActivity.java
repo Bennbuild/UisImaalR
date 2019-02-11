@@ -1,4 +1,4 @@
-package com.example.u_is_i_maal_r;
+package com.example.android.u_is_i_maal_r;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
