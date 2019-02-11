@@ -1,7 +1,7 @@
-package com.example.android.u_is_i_maal_r;
+package com.example.u_is_i_maal_r;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,9 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    double Uwaarde;
-    double Iwaarde;
-    double Rwaarde;
 
     public void calculate(View view) {
         EditText uEditText = findViewById(R.id.uTextView);
@@ -34,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         if (uDouble != 0) {
             if (iDouble != 0) {
                 if (rDouble == 0) {
-                    double rAnswer = uDouble / iDouble;
+                    String rAnswer = "R = " + (uDouble / iDouble);
                     displayAnswer(rAnswer);
                 }
             }
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         if (uDouble != 0) {
             if (rDouble != 0) {
                 if (iDouble == 0) {
-                    double iAnswer = uDouble / rDouble;
+                    String iAnswer = "I = " + (uDouble / rDouble);
                     displayAnswer(iAnswer);
                 }
             }
@@ -52,19 +49,59 @@ public class MainActivity extends AppCompatActivity {
         if (iDouble != 0) {
             if (rDouble != 0) {
                 if (uDouble == 0) {
-                    double uAnswer = iDouble * rDouble;
+                    String uAnswer = "U = " + (iDouble * rDouble);
                     displayAnswer(uAnswer);
                 }
             }
         }
 
+        if (iDouble == 0) {
+            if (rDouble == 0) {
+                if (uDouble == 0) {
+                    displayAnswer("NO FIELDS HAVE BEEN FILLED IN");
+                }
+            }
+        }
+
+        if (iDouble != 0) {
+            if (rDouble != 0) {
+                if (uDouble != 0) {
+                    displayAnswer("ALL FIELDS HAVE BEEN FILLED IN");
+                }
+            }
+        }
+
+        if (iDouble == 0) {
+            if (rDouble != 0) {
+                if (uDouble == 0) {
+                    displayAnswer("ONLY ONE FIELD HAS BEEN FILLED IN");
+                }
+            }
+        }
+
+        if (iDouble != 0) {
+            if (rDouble == 0) {
+                if (uDouble == 0) {
+                    displayAnswer("ONLY ONE FIELD HAS BEEN FILLED IN");
+                }
+            }
+        }
+
+        if (iDouble == 0) {
+            if (rDouble == 0) {
+                if (uDouble != 0) {
+                    displayAnswer("ONLY ONE FIELD HAS BEEN FILLED IN");
+                }
+            }
+        }
+
+
 
     }
 
-    public void displayAnswer(double answer) {
+    public void displayAnswer(String answer) {
         TextView answerText = findViewById(R.id.answerTextView);
-        String answerString = Double.toString(answer);
-        answerText.setText(answerString);
+        answerText.setText(answer);
 
     }
 }
